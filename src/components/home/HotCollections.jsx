@@ -38,13 +38,13 @@ const HotCollections = () => {
               <div className="nft_coll">
                 <div className="nft_wrap">
                   <Link to="/item-details">
-                    <img src="https://nft-place.web.app/static/media/coll-1.b8f9d867e8ed59ee7fa7.jpg",
+                    <img src="https://nft-place.web.app/static/media/coll-1.b8f9d867e8ed59ee7fa7.jpg"
 className="lazy img-fluid" alt="" />
                   </Link>
                 </div>
                 <div className="nft_coll_pp">
                   <Link to="/author">
-                    <img className="lazy pp-coll" src= "https://nft-place.web.app/static/media/author-1.04ee784f53cbe427d362.jpg", alt="" />
+                    <img className="lazy pp-coll" src= "https://nft-place.web.app/static/media/author-1.04ee784f53cbe427d362.jpg" alt="" />
                   </Link>
                   <i className="fa fa-check"></i>
                 </div>
