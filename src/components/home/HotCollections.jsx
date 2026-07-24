@@ -6,6 +6,10 @@ import axios from "axios";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css"
+
+
 
 const carouselOptions = {
   loop: true,
@@ -24,18 +28,14 @@ const HotCollections = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isClient, setIsClient] = useState(false);
+  const [sliderRef] = useKeenSlider(carouselOptions);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-
-
-
-  useEffect(() => {
+  
+useEffect(() => {
     const fetchCollections = async () => {
       setIsLoading(true);
       setError(null);
+
 
       try {
         const { data } = await axios.get(
