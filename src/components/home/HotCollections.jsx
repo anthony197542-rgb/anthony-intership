@@ -15,7 +15,7 @@ const carouselOptions = {
   responsive: {
     0: { items: 1 },
     576: { items: 2 },
-    992: { items: 3 },
+    992: { items: 4 },
   },
 };
 
@@ -23,6 +23,7 @@ const HotCollections = () => {
   const [collections, setCollections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
