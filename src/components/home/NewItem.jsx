@@ -25,7 +25,7 @@ const NewItem = ({ item }) => {
             data-bs-placement="top"
             title={`Creator: ${creator}`}
           >
-            <img className="lazy" src={authorImage} alt={creator} />
+            <img src={authorImage} alt={creator} />
             <i className="fa fa-check"></i>
           </Link>
         </div>
@@ -52,7 +52,7 @@ const NewItem = ({ item }) => {
           </div>
 
           <Link to={link}>
-            <img src={image} className="lazy nft__item_preview" alt={title} />
+            <img src={image} className="nft__item_preview" alt={title} />
           </Link>
         </div>
 
