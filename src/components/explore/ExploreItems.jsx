@@ -69,10 +69,10 @@ const ExploreItems = () => {
         </div>
       ))}
       <div className="col-md-12 text-center">
-        <Link to="" id="loadmore" className="btn-main lead">
-          Load more
-        </Link>
-      </div>
+  <button id="loadmore" className="btn-main lead" type="button">
+    Load more
+  </button>
+</div>
     </>
   );
 };
