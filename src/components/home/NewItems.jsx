@@ -49,7 +49,7 @@ const NewItems = () => {
               <p>{error}</p>
             </div>
           ) : (
-            items.map((item, index) => {
+            items.slice(0, 4).map((item, index) => {
               const itemData = {
                 title: item.title || "Untitled",
                 price: item.price || "0 ETH",
