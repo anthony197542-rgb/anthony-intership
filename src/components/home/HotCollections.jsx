@@ -26,11 +26,11 @@ const HotCollections = () => {
   const [collections, setCollections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isClient, setIsClient] = useState(false);
+ 
 
   
 
-  
+
 useEffect(() => {
     const fetchCollections = async () => {
       setIsLoading(true);
