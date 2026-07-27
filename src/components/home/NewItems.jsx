@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NewItem from "./NewItem";
 
 
-const itemList = () =>  {
-  const [itemlist, setItemList] = useState([
+const NewItems = () => {
+  const [itemList, setItemList] = useState([]);
+
 
 
 
@@ -17,7 +18,7 @@ const itemList = () =>  {
       setItemList(data);
     }
     fetchNewItems();
-  }, []
+  }, []);
 
 
 return (
@@ -32,7 +33,9 @@ return (
           </div>
 
           {itemList.map((item) => (
-            <NewItem key={item.id} item={item} />
+  <NewItem key={item.id} item={item} />
+))}
+          
           </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ const NewItem = ({ item }) => {
     link = "/item-details",
     authorImage = AuthorImage,
     image = nftImage,
-  } = item || {};
+   } = item || {};
 
   return (
     <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
