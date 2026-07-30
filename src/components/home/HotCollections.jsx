@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
 import OwlCarousel from "react-owl-carousel";
 
@@ -65,7 +63,7 @@ const HotCollections = () => {
                   <div className="nft_coll">
                     <div className="nft_wrap">
               <div
-                 calssName="skeleton_box"
+                 className="skeleton_box"
                  style={{ width: "100%", height: "200px", }}
               ></div>
               </div>
@@ -83,57 +81,59 @@ const HotCollections = () => {
                 <br />
                 <div
                   className="skeleton_box"
-                  style={{ width: "60px", height: "15px", marginTop: "8" }}
+                  style={{ width: "60px", height: "15px", marginTop: "8px" }}
                   ></div>
                   </div>
                   </div>
                   </div>
               ))}
+              </div>
               ) : (
                 collections.length > 0 && (
-                  <OwlCarousel
-                  key={collections.legth}
-                  className="owl-theme"
-                  {...options}
-                  >
-                    {collections.map((item) => (
-                      <div className="nft_coll" key={item.id}>
-                        <div className="nft_wrap">
-                          <Link to={`/item-details/${item.nftId}`}> 
-                          <img
-                            src={item.nftImage}
-                            className="lazy img-fluid"
-                            alt={item.title}
-                          />  
-                          </Link>
-                        </div>
-                        <div className="nft_coll_pp">
-                          Link to={`/author/${item.authorId}`}>
-                            <img
-                              className="lazy pp-coll"
-                              src={item.authorImage}  
-                               alt={item.title}
-                               />
-                               </Link>
-                               <i className="fa fa-check"></i>
-                               </div>
-                               <div className="nft_col_info">
-                                <Link to={`/item-details/${item.nftId}`}>
-                                  <h4>{item.title}</h4>
-                                </Link>
-                                <span>ERC-{item.code}</span>
-                                </div>
-                                </div>
-                    ))}
-                  </OwlCarousel>
-                ) 
-              )}
-              </div>
-              </div>
-              </div>
-              </section>
-            );
-          };
-          
+                    <OwlCarousel
+    key={collections.length}
+    className="owl-theme"
+    {...options}
+  >
+    {collections.map((item) => (
+      <div className="nft_coll" key={item.id}>
+        <div className="nft_wrap">
+          <Link to={`/item-details/${item.nftId}`}>
+            <img
+              src={item.nftImage}
+              className="lazy img-fluid"
+              alt={item.title}
+            />
+          </Link>
+        </div>
+
+        <div className="nft_coll_pp">
+          <Link to={`/author/${item.authorId}`}>
+            <img
+              className="lazy pp-coll"
+              src={item.authorImage}
+              alt={item.title}
+            />
+          </Link>
+          <i className="fa fa-check"></i>
+        </div>
+
+        <div className="nft_coll_info">
+          <Link to={`/item-details/${item.nftId}`}>
+            <h4>{item.title}</h4>
+          </Link>
+          <span>ERC-{item.code}</span>
+        </div>
+      </div>
+    ))}
+  </OwlCarousel>  
+                )               
+                 )}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+};
 
 export default HotCollections;
