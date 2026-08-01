@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e68c6e4 (first commit)
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -11,7 +7,6 @@ const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-<<<<<<< HEAD
   // Click handler
   const handleSellerClick = (seller) => {
     console.log("Seller clicked:", seller);
@@ -32,24 +27,6 @@ const TopSellers = () => {
       }
     }
 
-=======
-  // 1. Fetch top sellers data from API
-  async function fetchTopSellers() {
-    setLoading(true);
-    try {
-      const { data } = await axios.get(
-        "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
-      );
-      setSellers(data);
-    } catch (error) {
-      console.error("Error fetching top sellers:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
->>>>>>> e68c6e4 (first commit)
     fetchTopSellers();
   }, []);
 
@@ -64,14 +41,8 @@ const TopSellers = () => {
 
           <div className="col-md-12">
             <ol className="author_list">
-<<<<<<< HEAD
               {loading
                 ? Array.from({ length: 12 }).map((_, index) => (
-=======
-              {/* 2. Loading Skeleton State */}
-              {loading
-                ? new Array(12).fill(0).map((_, index) => (
->>>>>>> e68c6e4 (first commit)
                     <li key={index}>
                       <div className="author_list_pp">
                         <Skeleton
@@ -81,7 +52,6 @@ const TopSellers = () => {
                         />
                       </div>
                       <div className="author_list_info">
-<<<<<<< HEAD
                         <Skeleton width="100px" height="20px" />
                         <Skeleton width="40px" height="15px" />
                       </div>
@@ -93,24 +63,6 @@ const TopSellers = () => {
                       onClick={() => handleSellerClick(seller)}
                       style={{ cursor: "pointer" }}
                     >
-=======
-                        <Skeleton
-                          width="100px"
-                          height="20px"
-                          borderRadius="4px"
-                        />
-                        <Skeleton
-                          width="40px"
-                          height="15px"
-                          borderRadius="4px"
-                        />
-                      </div>
-                    </li>
-                  ))
-                : /* 3. Rendered Content */
-                  sellers.map((seller) => (
-                    <li key={seller.id}>
->>>>>>> e68c6e4 (first commit)
                       <div className="author_list_pp">
                         <Link to={`/author/${seller.authorId}`}>
                           <img
@@ -121,10 +73,6 @@ const TopSellers = () => {
                           <i className="fa fa-check"></i>
                         </Link>
                       </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> e68c6e4 (first commit)
                       <div className="author_list_info">
                         <Link to={`/author/${seller.authorId}`}>
                           {seller.authorName}
@@ -141,11 +89,7 @@ const TopSellers = () => {
   );
 };
 
-<<<<<<< HEAD
 export default TopSellers;
 
                     
             
-=======
-export default TopSellers;
->>>>>>> e68c6e4 (first commit)
