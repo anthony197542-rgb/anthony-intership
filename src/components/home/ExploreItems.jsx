@@ -1,7 +1,7 @@
-import React, {useState, usEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
-import Skeleton from "./UI/Skeleton";
+import { Link } from "react-router-dom";
+import Skeleton from "../UI/Skeleton";
 
 
 const CountdownTimer = ({expiryDate}) => {
@@ -143,7 +143,7 @@ const ExploreItems = () => {
                       >
                         <img
                           className="lazy"
-                          src={item.authorImg}
+                          src={item.authorImage}
                           alt={item.title}
                         />
                         <i className="fa fa-check"></i>
