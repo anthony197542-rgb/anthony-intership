@@ -134,7 +134,7 @@ const NewItems = () => {
                         >
                           <img
                             className="lazy"
-                            src={item.nftimage}
+                            src={item.authorImage}
                             alt={item.title}
                           />
                           <i className="fa fa-check"></i>
