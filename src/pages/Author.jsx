@@ -40,7 +40,6 @@ const Author = () => {
     }
   };
 
-  // Fallback for author avatar property name across API variations
   const authorImage = author?.authorImage || author?.authorImg;
 
   if (loading) {
@@ -136,15 +135,16 @@ const Author = () => {
                       </h4>
                     </div>
                   </div>
-                </div>
-                <div className="profile_follow de-flex">
-                  <div className="de-flex-col">
-                    <div className="profile_follower">
-                      {author?.followers} followers
+
+                  <div className="profile_follow de-flex">
+                    <div className="de-flex-col">
+                      <div className="profile_follower">
+                        {author?.followers} followers
+                      </div>
+                      <button className="btn-main" onClick={toggleFollow}>
+                        {following ? "Unfollow" : "Follow"}
+                      </button>
                     </div>
-                    <button className="btn-main" onClick={toggleFollow}>
-                      {following ? "Unfollow" : "Follow"}
-                    </button>
                   </div>
                 </div>
               </div>
