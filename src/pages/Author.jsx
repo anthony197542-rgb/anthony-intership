@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import AuthorItems from "../components/author/AuthorItems";
+import AuthorBanner from "../images/author_banner.jpg";
 
 const Author = () => {
   const { id } = useParams();
@@ -38,6 +39,9 @@ const Author = () => {
       setFollowing(true);
     }
   };
+
+  // Fallback for author avatar property name across API variations
+  const authorImage = author?.authorImage || author?.authorImg;
 
   if (loading) {
     return (
@@ -106,9 +110,7 @@ const Author = () => {
           id="profile_banner"
           aria-label="section"
           className="text-light"
-          style={{
-            background: `url(${author?.authorBanner || "/images/author_banner.jpg"}) top`,
-          }}
+          style={{ background: `url(${author?.authorBanner || AuthorBanner}) top` }}
         ></section>
 
         <section aria-label="section">
@@ -118,7 +120,7 @@ const Author = () => {
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
                     <div className="profile_avatar">
-                      <img src={author?.authorImg} alt={author?.authorName} />
+                      <img src={authorImage} alt={author?.authorName} />
                       <i className="fa fa-check"></i>
                     </div>
                     <div className="profile_name">
@@ -151,7 +153,7 @@ const Author = () => {
                 <div className="de_tab tab_simple">
                   <AuthorItems
                     nftCollection={author?.nftCollection}
-                    authorImg={author?.authorImg}
+                    authorImg={authorImage}
                   />
                 </div>
               </div>
