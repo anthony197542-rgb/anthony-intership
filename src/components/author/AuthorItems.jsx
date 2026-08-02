@@ -26,26 +26,26 @@ const AuthorItems = ({ nftCollection, authorImg }) => {
             >
               <div className="nft__item">
                 <div className="author_list_pp">
-                  <Link to="">
+                  <span className="author_avatar_wrapper">
                     <img className="lazy" src={authorImg} alt="" />
                     <i className="fa fa-check"></i>
-                  </Link>
+                  </span>
                 </div>
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
                     <div className="nft__item_buttons">
-                      <button>Buy Now</button>
+                      <button type="button">Buy Now</button>
                       <div className="nft__item_share">
                         <h4>Share</h4>
-                        <a href="" target="_blank" rel="noreferrer">
+                        <button type="button" aria-label="Share on Facebook">
                           <i className="fa fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="" target="_blank" rel="noreferrer">
+                        </button>
+                        <button type="button" aria-label="Share on Twitter">
                           <i className="fa fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="">
+                        </button>
+                        <button type="button" aria-label="Share via Email">
                           <i className="fa fa-envelope fa-lg"></i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
